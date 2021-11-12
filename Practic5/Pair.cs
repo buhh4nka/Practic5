@@ -11,7 +11,6 @@ namespace Practic5
         {
             First = 0;
             Second = 0;
-
         }
         public Pair(int first, int second)
         {
@@ -20,27 +19,30 @@ namespace Practic5
         }
         public int First { get; set; }
         public int Second { get; set; }
-        public void Sum(Pair firstPair, Pair anotherPair)
+        public Pair Sum(Pair firstPair, Pair secondPair)
         {
-            new Pair(firstPair.First + anotherPair.First, firstPair.Second + anotherPair.Second);
+            First = firstPair.First + secondPair.First;
+            Second = firstPair.Second + secondPair.Second;
+            return new Pair(First, Second);
         }
-        public void Sum(Pair firstPair, Pair secondPair, Pair thirdPair)
+        public Pair Sum(Pair firstPair, Pair secondPair, Pair thirdPair)
         {
-            new Pair(firstPair.First + secondPair.First + thirdPair.First, firstPair.Second + secondPair.Second + thirdPair.Second);
+            First = firstPair.First + secondPair.First + thirdPair.First;
+            Second = firstPair.Second + secondPair.Second + thirdPair.Second;
+            return new Pair(First, Second);
         }
         public Pair Add()
         {
-            
-            return  new Pair(First+1, Second+1);
+            First += 1;
+            Second += 1;
+            return  new Pair(First, Second);
         }
         public Pair Add(int number)
         {
-            Pair pair = new Pair();
-            pair.First += number;
-            pair.Second += number;
-            return pair;
+            First += number;
+            Second += number;
+            return new Pair(First, Second);
         }
-        //Sum(pair, pair1);
-        //pair.sum(anotherPair)
+        
     }
 }
